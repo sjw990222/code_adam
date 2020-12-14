@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>:: CODE ADAM ::</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="wow.min.js"></script>
+	<style type="text/css">
+		.pie-chart .slice {stroke: black;}
+		html {background-color:black;
+			scroll-behavior: smooth;}
+		body, ul, li, h1, h2, h3, h4, h5{margin: 0;
+			padding: 0; }
+		header {font-family: 'Source Code Pro', monospace;
+			text-align: center;
+			position: relative;}
+		section {font-family: 'Noto Sans KR', sans-serif;
+			position: relative;
+			height: 800px;}
+
+		nav{height: 66px;
+			font-weight: 700;
+			background: rgb(0,0,220);}
+		nav ul{width:900px;
+			height: 70px;
+			float:right;}
+		nav ul li{list-style-type: none;
+			width:25%;
+			float:left;
+			text-align: center;
+			line-height: 50px;}
+		nav ul li a{display: block;
+			text-decoration: none;}
+
+		h1 {font-size: 2em;
+			color: white;
+			font-weight: 700;
+			padding-top: 250px;
+			padding-bottom: 50px;
+			text-align: center;
+			letter-spacing: -1px;}
+		h2 {font-size: 1.2em;
+			color: white;
+			font-weight: 400;
+			padding-top: 10px;
+			text-align: center;
+			word-break: keep-all;
+			letter-spacing: -1px;
+			line-height: 165%;}
+		h3 {font-size: 1em;
+			color: white;
+			font-weight: 300;
+			padding-top: 10px;
+			text-align: left;
+			word-break: keep-all;
+			letter-spacing: -1px;
+			line-height: 165%;}
+
+		a:link{color: rgb(255,255,255);
+			text-decoration: none;}
+		a:visited{color: rgb(255,255,255);
+			text-decoration: none;}
+		a:hover{color: rgb(0,0,220);
+			text-decoration: underline;
+			background: white;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-left-style: solid;
+			border-top-color: black;
+			border-right-color: black;
+			border-left-color: black;
+			border-top-width: 2px;
+			border-left-width: 2px;
+			border-right-width: 2px;
+			opacity: 90%;}
+		a:active{background:black;}
+
+
+		@keyframes logo { from {color:rgb(255,255,255);} to{ color:rgb(0,0,220);} }
+
+		@keyframes graph {from {bottom:0px;} to {bottom:200px;}}
+		@keyframes hours {from {bottom:20px;} to {bottom:300px;}}
+		@keyframes graphs {from {bottom:0px;} to {bottom:150px;}}
+		@keyframes hourss {from {bottom:20px;} to {bottom:250px;}}
+		@keyframes graphss {from {bottom:0px;} to {bottom:70px;}}
+		@keyframes hoursss {from {bottom:20px;} to {bottom:170px;}}
+
+		.line {fill: none;
+			  stroke: rgb(0,0,220);
+			  stroke-width: 2px;}
+
+
+
+
+		.graph {position: absolute;
+			line-height: 600%;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			color:white;
+			left: 900px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: rgb(0,0,220);
+			animation: graph 2s 0.5s forwards;}
+		.hours12 {position: absolute;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			line-height: 600%;
+			left: 875px;
+			bottom: 20px;
+			width: 150px; 
+			height: 200px;
+			color:white;
+			animation: hours 2s 0.5s forwards;}
+		.graphoverlay {position: absolute;
+			line-height: 600%;
+			left: 900px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: black;}
+
+		.graph2 {position: absolute;
+			line-height: 600%;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			color:white;
+			left: 700px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: rgb(0,0,220);
+			animation: graphs 2s 0.2s forwards;}
+		.hours24 {position: absolute;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			line-height: 600%;
+			left: 675px;
+			bottom: 20px;
+			width: 150px; 
+			height: 200px;
+			color:white;
+			animation: hourss 2s 0.2s forwards;}
+		.graphoverlay2 {position: absolute;
+			line-height: 600%;
+			left: 700px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: black;}
+
+		.graph3 {position: absolute;
+			line-height: 600%;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			color:white;
+			left: 500px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: rgb(0,0,220);
+			animation: graphss 2s forwards;}
+		.hours7 {position: absolute;
+			font-weight: 500;
+			font-size: 1em;
+			text-align: center;
+			line-height: 600%;
+			left: 475px;
+			bottom: 20px;
+			width: 150px; 
+			height: 200px;
+			color:white;
+			animation: hoursss 2s forwards;}
+		.graphoverlay3 {position: absolute;
+			line-height: 600%;
+			left: 900px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			left: 500px;
+			bottom: 0px;
+			width: 100px; 
+			height: 200px;
+			background-color: black;}
+
+		.background {line-height: 400%;}
+		.process {line-height: 400%;}
+		.inkorea {line-height: 400%;
+			height: 66px;
+			background:black;}
+		.definition {line-height: 400%;}
+		.logo{height:66px;
+			width: 619px;
+			float: left;
+			text-align: center;
+			line-height: 400%;}
+		.shortcut {position:fixed; right: 50px; bottom: 50px;}
+
+		.row{width: 800px;
+			margin: auto;}
+		.row2 {width: 1400px;
+			margin: auto;}
+		.flex {display: flex;}
+		.col-2{width: 50%;
+			margin:10px;}
+		.flex div {overflow: hidden;}
+
+		.min {background-image: url(clock.gif);
+			width: 100%;
+			background-attachment: fixed;
+			margin: auto;
+			font-size: 2.5em;
+			font-weight: 700;
+			color: white;
+			text-align: left;}
+		.ever {text-align: right;}
+
+		.water {background-image: url(watertank.gif);
+			width: 100%;
+			height:450px;
+			background-size: 100%, auto;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			margin-top: 20px;}
+		.question {height: 600px;
+			font-size: 1em;
+			font-weight: 300;
+			color: white;
+			text-align: center;}
+
+		.intro {padding: 20px;}
+
+		.transition {height: 300px;
+			font-size:5em;
+			color: rgb(0,0,220);
+			font-weight: 700;
+			text-align: center;
+			word-break: keep-all;
+			letter-spacing: -1px;
+			margin-top: 10px;
+			margin-bottom: 50px;}
+		.help {background-image: url(help.gif);
+			width: 100%;
+			background-size: 100%, auto;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			height: 500px;
+			font-size:3em;
+			color: white;
+			font-weight: 700;
+			text-align: center;
+			word-break: keep-all;
+			letter-spacing: -1px;
+			margin-top: 10px;
+			margin-bottom: 0px;}
+
+
+	</style>
+</head>
+<body>
+	<header id="a">
+		<nav id="navigation">
+			<div class="logo">
+				<a href="index.html">Code★Adam</a>
+			</div>
+
+			<ul>
+				<li class="definition">
+					<a href="definition.html">definition</a>
+				</li>
+				<li class="background">
+					<a href="background.html">background</a>
+				</li>
+				<li class="process">
+					<a href="process.html">process</a>
+				</li>
+				<li class="inkorea">
+					<a href="inkorea.html">in korea</a>
+				</li>
+			</ul>
+		</nav>	
+	</header>
+
+	<div class="row flex">
+		<h3 class="col-2 water intro">
+			
+			2015년 수원의 한 쇼핑몰에서는 실종된 3살 아이가 
+			<br>
+			두 시간 만에 쇼핑몰 저수조에서 숨진 채 발견되었다. 
+		</h3>
+		<h3 class="col-2  water intro">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			알고보니 해당 쇼핑몰은 코드 아담 대상 시설이었음에도
+			쇼핑몰 관계자와 경찰 모두 모르고 있었다는 것이다.
+		</h3>
+	</div>
+
+	<div class="transition">
+		한국에서의 CODE ADAM
+	</div>
+
+	<section>
+		<h3 class="row">
+			우리나라는 코드 아담을 2014년 7월 29일부터 '실종 예방 지침'이라는 이름으로 도입했다.
+		</h3>
+
+		<br>
+
+		<h3 class="row">
+			이로 부터 2016년까지 약 2년의 성과를 지켜본 결과, 실종 경보를 내린 후, 모든 실종자를 찾아내는 데 성공했다. 또한 제도가 널리 알려지면서 제도를 활용하는 수가 꾸준히 늘고 있는 추세이다.
+		</h3>
+
+		<div class="wow graph3">646</div>
+		<div class="wow hours7"> 2014</div>
+		<div class="wow graphoverlay3"></div>
+		<div class="wow graph2">3777</div>
+		<div class="wow hours24"> 2015</div>
+		<div class="wow graphoverlay2"></div>
+		<div class="wow graph">3319</div>
+		<div class="wow hours12"> 2016년 7월 말</div>
+		<div class="wow graphoverlay"></div>
+	</section>
+
+	<section class="min">
+		<br>
+		<div class="row2">
+			즉, 초기 10분간의 대응이 중요한 실종 아동 사건에서
+			<br>
+			코드 아담이 큰 역할을 하고 있는 것이다.
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="row2 ever">
+		그럼에도, 코드 아담이 도입된 지 7년이 지난 지금에도, 
+			<br>
+			이 제도를 모르는 사람이 대다수이다.
+		</div>
+	</section>
+
+
+	<section class="question">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h3 class="row">
+		'만약에 ...해서 ...했다면 지금은 달라지지 않았을까?' 라는 것은 없어져야 한다.
+		<br>
+		이를 위해서는 코드 아담에 대해서 배우고 실천하는 우리 모두의 적극적인 태도가 필요하다.	
+		<br>
+		이제부터는 대형 마트나 놀이공원 등 다중이용시설에서 아동을 잃어버리거나 그것을 목격했다면, 바로 직원에게 코드 아담을 요청해보자.
+		</h3>	
+	</section>
+
+	<div class="help">
+		<br>
+			<br>
+		<br>
+		당신이 오늘 구한 생명이
+		<br>
+		내일 당신의 생명을 구할 수 있다.
+	</div>
+	
+	<a href="#a" class="shortcut">
+		TOP
+	</a>
+
+	<script type="text/javascript">
+
+		new WOW().init();
+    	console.log("ok");
+	</script>
+</body>
